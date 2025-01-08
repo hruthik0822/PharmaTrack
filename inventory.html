@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/inventory.css">
+    <script src="js/inventory.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Inventory Management</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Dashboard</a></li>
+            <li><a href="inventory.html">Inventory Management</a></li>
+            <li><a href="procurement.html">Procurement</a></li>
+            <li><a href="shipments.html">Shipment Tracking</a></li>
+            <li><a href="reports.html">Reports</a></li>
+        </ul>
+    </nav>
+
+    <div id="top-controls">
+        <div id="search-container">
+            <input type="text" id="search-input" placeholder="Search for drugs...">
+            
+        </div>
+        <button id="search-btn" onclick="searchDrugs()">Search</button>
+        <button id="add-drug-btn">Add Drug</button>
+    </div>
+    
+    <div id="medicine-container"></div>
+
+    <!-- Modal for adding new drug -->
+    <div id="add-drug-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Add New Drug</h2>
+            <form id="add-drug-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="mrp">MRP:</label>
+                <input type="number" id="mrp" name="mrp" required>
+
+                <label for="type">Type:</label>
+                <input type="text" id="type" name="type" required>
+
+                <label for="manufacturer">Manufacturer:</label>
+                <input type="text" id="manufacturer" name="manufacturer" required>
+
+                <label for="composition">Composition:</label>
+                <input type="text" id="composition" name="composition" required>
+
+                <button type="submit">Add Drug</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Drug Inventory and Supply Chain Tracking System</p>
+    </footer>
+</body>
+</html>

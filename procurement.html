@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Procurement</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Procurement Management</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Dashboard</a></li>
+            <li><a href="inventory.html">Inventory Management</a></li>
+            <li><a href="procurement.html">Procurement</a></li>
+            <li><a href="shipments.html">Shipment Tracking</a></li>
+            <li><a href="reports.html">Reports</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section>
+            <h2> Order Requests</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Drug Name</th>
+                        <th>Quantity</th>
+                        <th>Vendor</th>
+                        <th>Expected Delivery Date</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Sample data inserted into the table -->
+                    <tr>
+                        <td>ORD-001</td>
+                        <td>Paracetamol</td>
+                        <td>500</td>
+                        <td>ABC Pharmaceuticals</td>
+                        <td>2024-09-15</td>
+                        <td>
+                            <button class="accept-btn" onclick="updateStatus(this, 'Accepted')">Accept</button>
+                            <button class="decline-btn" onclick="updateStatus(this, 'Declined')">Decline</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>ORD-002</td>
+                        <td>Ibuprofen</td>
+                        <td>300</td>
+                        <td>XYZ Pharma</td>
+                        <td>2024-09-20</td>
+                        <td>
+                            <button class="accept-btn" onclick="updateStatus(this, 'Accepted')">Accept</button>
+                            <button class="decline-btn" onclick="updateStatus(this, 'Declined')">Decline</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>ORD-003</td>
+                        <td>Amoxicillin</td>
+                        <td>200</td>
+                        <td>Medicare Ltd.</td>
+                        <td>2024-09-25</td>
+                        <td>
+                            <button class="accept-btn" onclick="updateStatus(this, 'Accepted')">Accept</button>
+                            <button class="decline-btn" onclick="updateStatus(this, 'Declined')">Decline</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>  
+    </main>
+    <footer>
+        <p>&copy; 2024 Drug Inventory and Supply Chain Tracking System</p>
+    </footer>
+
+    <style>
+        /* Additional styling for the Accept/Decline buttons */
+        .accept-btn, .decline-btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .accept-btn {
+            background-color: #28a745; /* Green */
+            color: white;
+        }
+
+        .accept-btn:hover {
+            background-color: #218838; /* Darker green on hover */
+            transform: scale(1.05); /* Slight enlarge on hover */
+        }
+
+        .decline-btn {
+            background-color: #dc3545; /* Red */
+            color: white;
+            margin-left: 10px;
+        }
+
+        .decline-btn:hover {
+            background-color: #c82333; /* Darker red on hover */
+            transform: scale(1.05); /* Slight enlarge on hover */
+        }
+
+        .status-accepted {
+            color: #28a745; /* Green color for accepted */
+        }
+
+        .status-declined {
+            color: #dc3545; /* Red color for declined */
+        }
+    </style>
+
+    <script>
+        function updateStatus(button, status) {
+            // Get the parent row of the button
+            var row = button.parentElement.parentElement;
+            // Get the status cell
+            var statusCell = row.querySelector('td:last-child');
+            // Remove existing buttons
+            statusCell.innerHTML = '';
+
+            // Update the status with the appropriate text and tick mark
+            if (status === 'Accepted') {
+                statusCell.innerHTML = `<span class="status-accepted">Accepted &#10004;</span>`;
+            } else if (status === 'Declined') {
+                statusCell.innerHTML = `<span class="status-declined">Declined &#10008;</span>`;
+            }
+        }
+    </script>
+</body>
+</html>

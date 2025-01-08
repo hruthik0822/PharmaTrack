@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Registration</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/customer.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Create Account</h2>
+        <form onsubmit="return validateAndCreateAccount()">
+            <div class="form-group">
+                <label for="customer-name">Name</label>
+                <input type="text" id="customer-name" name="customer-name" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="customer-mobile">Mobile Number</label>
+                <input type="tel" id="customer-mobile" name="customer-mobile" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="customer-email">Email</label>
+                <input type="email" id="customer-email" name="customer-email" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="customer-new-password">Password</label>
+                <input type="password" id="customer-new-password" name="customer-new-password" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="customer-confirm-password">Confirm Password</label>
+                <input type="password" id="customer-confirm-password" name="customer-confirm-password" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Create Account</button>
+            <a id="back1" href="customer.html">Back To Login</a>
+        </form>
+    </div>
+
+    <script>
+
+        function validateAndCreateAccount() {
+            const name = document.getElementById('customer-name').value;
+            const mobile = document.getElementById('customer-mobile').value;
+            const email = document.getElementById('customer-email').value;
+            const password = document.getElementById('customer-new-password').value;
+            const confirmPassword = document.getElementById('customer-confirm-password').value;
+
+            if (password !== confirmPassword) {
+                alert('Passwords do not match');
+                return false; // Prevent default form submission
+            }
+
+            // Here, you would typically add more validation for email and mobile number formats
+
+            // After successful validation
+            alert('Account created successfully!'); // Replace with actual account creation logic
+            return false; // Prevent default form submission
+        }
+    </script>
+</body>
+</html>

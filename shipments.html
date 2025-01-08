@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shipment Tracking</title>
+    <link rel="stylesheet" href="css/shipments.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Shipment Tracking</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Dashboard</a></li>
+            <li><a href="inventory.html">Inventory Management</a></li>
+            <li><a href="procurement.html">Procurement</a></li>
+            <li><a href="shipments.html">Shipment Tracking</a></li>
+            <li><a href="reports.html">Reports</a></li>
+        </ul>
+    </nav>
+    <label id=l1 for="shipment-type">Select Shipment Type:</label>
+    <!-- Dropdown to select between Current Shipments and Shipment History -->
+    <div class="dropdown-container">
+        <select id="shipment-type">
+            <option value="" selected>Select Shipment... </option>
+            <option value="current-shipments">Current Shipments</option>
+            <option value="shipment-history">Shipment History</option>
+        </select>
+    </div>
+
+    <main>
+        <section id="current-shipments-section" class="hidden">
+            <h2>Current Shipments</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Select</th>
+                        <th>Shipment ID</th>
+                        <th>Order ID</th>
+                        <th>Buyer</th>
+                        <th>Drug Name</th>
+                        <th>Quantity</th>
+                        <th>Vendor</th>
+                        <th>Shipment Date</th>
+                        <th>Expected Delivery Date</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="checkbox" class="toggle-details" data-details="details-10001"></td>
+                        <td>10001</td>
+                        <td>ORD00123</td>
+                        <td>Sathyama institute</td>
+                        <td>Aspirin 100mg</td>
+                        <td>500</td>
+                        <td>Bayer Pharmaceuticals</td>
+                        <td>2024-09-01</td>
+                        <td>2024-09-06</td>
+                        <td>In Transit</td>
+                    </tr>
+                    <tr class="hidden-details" id="details-10001">
+                        <td colspan="10">
+                            <strong>Delivery Address:</strong> 123 Main Street, Chennai<br>
+                            <strong>Phone Number:</strong> +91-9876543210
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" class="toggle-details" data-details="details-10002"></td>
+                        <td>10002</td>
+                        <td>ORD00124</td>
+                        <td>Summit Care Hospital</td>
+                        <td>Amoxicillin 500mg</td>
+                        <td>300</td>
+                        <td>GlaxoSmithKline</td>
+                        <td>2024-09-02</td>
+                        <td>2024-09-07</td>
+                        <td>Shipped</td>
+                    </tr>
+                    <tr class="hidden-details" id="details-10002">
+                        <td colspan="10">
+                            <strong>Delivery Address:</strong> 456 Hilltop Road, Bangalore<br>
+                            <strong>Phone Number:</strong> +91-9123456789
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="shipment-history-section" class="hidden">
+            <h2>Shipment History</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Select</th>
+                        <th>Shipment ID</th>
+                        <th>Order ID</th>
+                        <th>Buyer</th>
+                        <th>Drug Name</th>
+                        <th>Quantity</th>
+                        <th>Vendor</th>
+                        <th>Shipment Date</th>
+                        <th>Delivery Date</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="checkbox" class="toggle-details" data-details="details-10000"></td>
+                        <td>10000</td>
+                        <td>ORD00122</td>
+                        <td>Apex Medical Research Institute</td>
+                        <td>Paracetamol 500mg</td>
+                        <td>1000</td>
+                        <td>Cipla Ltd</td>
+                        <td>2024-08-28</td>
+                        <td>2024-09-01</td>
+                        <td>Delivered</td>
+                    </tr>
+                    <tr class="hidden-details" id="details-10000">
+                        <td colspan="10">
+                            <strong>Delivery Address:</strong> 789 Research Ave, Hyderabad<br>
+                            <strong>Phone Number:</strong> +91-9988776655
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Drug Inventory and Supply Chain Tracking System</p>
+    </footer>
+
+    <script>
+        // Handle dropdown selection to show corresponding section
+        document.getElementById('shipment-type').addEventListener('change', function () {
+            const selectedValue = this.value;
+            
+            const currentShipmentsSection = document.getElementById('current-shipments-section');
+            const shipmentHistorySection = document.getElementById('shipment-history-section');
+
+            // Hide both sections initially
+            currentShipmentsSection.classList.add('hidden');
+            shipmentHistorySection.classList.add('hidden');
+
+            // Show the appropriate section based on the dropdown selection
+            if (selectedValue === 'current-shipments') {
+                currentShipmentsSection.classList.remove('hidden');
+            } else if (selectedValue === 'shipment-history') {
+                shipmentHistorySection.classList.remove('hidden');
+            }
+        });
+
+        // Show or hide additional details based on checkbox selection
+        document.querySelectorAll('.toggle-details').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                const detailsRowId = this.getAttribute('data-details');
+                const detailsRow = document.getElementById(detailsRowId);
+
+                if (this.checked) {
+                    detailsRow.style.display = 'table-row';
+                } else {
+                    detailsRow.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

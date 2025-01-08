@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Reports</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Dashboard</a></li>
+            <li><a href="inventory.html">Inventory Management</a></li>
+            <li><a href="procurement.html">Procurement</a></li>
+            <li><a href="shipments.html">Shipment Tracking</a></li>
+            <li><a href="reports.html">Reports</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section>
+            <h2>Generate Reports</h2>
+            <form id="reportForm">
+                <label for="reportType">Select Report Type:</label>
+                <select id="reportType" name="reportType">
+                    <option value="consumption">Drug Consumption Report</option>
+                    <option value="vendorPerformance">Vendor Performance Report</option>
+                    <option value="inventoryTurnover">Inventory Turnover Report</option>
+                </select>
+
+                <label for="startDate">Start Date:</label>
+                <input type="date" id="startDate" name="startDate">
+
+                <label for="endDate">End Date:</label>
+                <input type="date" id="endDate" name="endDate">
+
+                <button type="submit">Generate Report</button>
+            </form>
+        </section>
+        <section>
+            <h2>Report Results</h2>
+            <div id="reportResults">
+                <!-- Generated report will be displayed here -->
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Drug Inventory and Supply Chain Tracking System</p>  
+    </footer>
+</body>
+</html>

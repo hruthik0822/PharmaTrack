@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dealer Registration</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/customer.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Create Account</h2>
+        <form onsubmit="return validateAndCreateAccount()">
+            <div class="form-group">
+                <label for="dealer">Name</label>
+                <input type="text" id="dealer" name="dealer" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="dealer">Mobile Number</label>
+                <input type="tel" id="dealer" name="dealer" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="dealer">Email</label>
+                <input type="email" id="dealer" name="dealer" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="dealer">Password</label>
+                <input type="password" id="dealer" name="dealer" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="dealer">Confirm Password</label>
+                <input type="password" id="dealer" name="dealer" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Create Account</button>
+            <a id="back" href="dealer.html">Back To Login</a>
+        </form>
+    </div>
+
+    <script>
+
+        function validateAndCreateAccount() {
+            const name = document.getElementById('dealer-name').value;
+            const mobile = document.getElementById('dealer-mobile').value;
+            const email = document.getElementById('dealer-email').value;
+            const password = document.getElementById('dealer-new-password').value;
+            const confirmPassword = document.getElementById('dealer-confirm-password').value;
+
+            if (password !== confirmPassword) {
+                alert('Passwords do not match');
+                return false; // Prevent default form submission
+            }
+
+            // Here, you would typically add more validation for email and mobile number formats
+
+            // After successful validation
+            alert('Account created successfully!'); // Replace with actual account creation logic
+            return false; // Prevent default form submission
+        }
+    </script>
+</body>
+</html>
