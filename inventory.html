@@ -30,8 +30,18 @@
         <button id="search-btn" onclick="searchDrugs()">Search</button>
         <button id="add-drug-btn">Add Drug</button>
     </div>
-    
-    <div id="medicine-container"></div>
+    <main>
+        <section id="medicine-container" class="card-container">
+            <div class="medicine-card">
+                <h3>Drug Name</h3>
+                <p>Details about the drug.</p>
+                <div class="button-group">
+                    <button class="edit-btn">Edit</button>
+                    <button class="remove-btn" onclick="confirmRemoval()">Remove</button>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- Modal for adding new drug -->
     <div id="add-drug-modal" class="modal">
