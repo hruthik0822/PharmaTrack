@@ -1,0 +1,221 @@
+/* Container to position the Add Drug button and search input */
+#top-controls {
+    display: flex;
+    justify-content: space-between; /* Space between search input and Add Drug button */
+    align-items: center; /* Center items vertically */
+    padding: 20px 0; /* Adjust padding as needed */
+    gap: 20px; /* Space between elements */
+    position: absolute;
+    top: 14%;
+    left: 10%;
+}
+
+/* Button container to position the Add Drug button */
+#button-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+/* Search input styling */
+#search-container {
+    flex: 1; /* Allow search input to take available space */
+    max-width: 500px; /* Limit the maximum width of search input */
+}
+#search-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: teal;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-left: 10px;
+}
+#search-btn:hover {
+    background-color: #004d40; /* Darker hover effect */
+    transform: scale(1.05); /* Slight enlarge effect on hover */
+}
+
+#search-input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+/* Add Drug button styling */
+#add-drug-btn { 
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: teal;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#add-drug-btn:hover {
+    background-color: #004d40; /* Darker hover effect */
+    transform: scale(1.05); /* Slight enlarge effect on hover */
+}
+
+/* Medicine card container */
+.card-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping to new lines */
+    gap: 20px; /* Space between cards */
+    justify-content: space-between; /* Distribute space evenly */
+    padding: 20px; /* Padding around the container */
+    width: 100%; /* Full width */
+    max-width: 1200px; /* Optional: Limit maximum width */
+}
+
+/* Medicine card styling */
+.medicine-card {
+    height: fit-content;
+    background-color: white;
+    color: black;
+    border-radius: 8px;
+    padding: 15px;
+    width: calc(50% - 20px); /* Adjusted width for 2 cards per row with margin */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+    margin-bottom: 20px; /* Space below each card */
+}
+
+.medicine-card:hover {
+    transform: scale(1.05); /* Slightly increase size on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+}
+
+.medicine-card h3 {
+    margin-top: 0;
+    font-size: 1.2rem;
+    font-weight: bold; /* Make the heading bold */
+    color: black; /* Set the heading text color */
+}
+
+.medicine-card p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+    color: black; /* Set the paragraph text color */
+}
+
+/* Button group inside the medicine card */
+.button-group {
+    display: flex;
+    justify-content: flex-end; /* Align buttons to the right */
+    gap: 10px; /* Space between Edit and Remove buttons */
+    margin-top: 10px;
+}
+
+.button-group button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.edit-btn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.remove-btn {
+    background-color: #f44336;
+    color: white;
+}
+
+.edit-btn:hover {
+    background-color: #388e3c; /* Darker hover effect for edit */
+}
+
+.remove-btn:hover {
+    background-color: #d32f2f; /* Darker hover effect for remove */
+}
+
+/* Modal background */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.4); /* Black with opacity */
+    transition: opacity 0.3s ease;
+}
+
+.modal.show .modal-content {
+    transform: scale(1); /* Scale up to normal size */
+}
+/* Modal content */
+.modal-content {
+    background-color: #fefefe;
+    color: rgb(255, 255, 255); /* Set text color in the modal */
+    margin: 10% auto; /* Center the modal */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Adjust width for square appearance */
+    max-width: 500px; /* Maximum width */
+    height: 80%; /* Adjust height for square appearance */
+    max-height: 500px; /* Maximum height */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    transition: transform 0.3s ease;
+    transform: scale(0.9); /* Initial small scale for entrance animation */
+}
+
+/* Close button */
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+#add-drug-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#add-drug-form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #ffffff; /* Set label text color */
+}
+
+#add-drug-form input {
+    margin-bottom: 15px;
+    padding: 8px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: #333; /* Set input text color */
+}
+
+#add-drug-form button {
+    padding: 10px;
+    font-size: 16px;
+    background-color: teal;
+    color: rgb(255, 255, 255); /* Set button text color */
+    border: none;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+

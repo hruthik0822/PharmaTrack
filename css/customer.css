@@ -1,0 +1,92 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-image: url('https://st4.depositphotos.com/9999814/21366/i/450/depositphotos_213662058-stock-photo-male-doctor-using-mobile-phone.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 10%;
+}
+.container {
+    width: 40%;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out; /* Smooth transform on hover */
+}
+h1 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+.form-group label {
+    font-size: 18px;
+    font-weight: bold;
+}
+.form-control {
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 18px;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075);
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+.form-control:focus {
+    border-color: #80bdff;
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25);
+}
+.btn-primary {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #007bff;
+    border-color: #007bff;
+    color: #fff;
+    transition: background-color 0.3s ease, border-color 0.3s ease; /* Transition for hover effect */
+}
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        width: 90%; /* More screen space on smaller devices */
+        margin: auto; /* Center the container on small screens */
+        padding: 20px; /* Less padding on smaller devices */
+    }
+}
+
+/* Accessibility: Visual focus indicator for keyboard navigation */
+a, button, input[type="submit"], input[type="text"], input[type="password"] {
+    outline: none;
+}
+a:focus, button:focus, input[type="submit"]:focus, input[type="text"]:focus, input[type="password"]:focus {
+    box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+}
+
+#back{
+    position: absolute;
+    left: 61%;
+    top: 65%;
+}
+
+#back1{
+    position: absolute;
+    left: 66%;
+    top: 76.4%;
+
+}

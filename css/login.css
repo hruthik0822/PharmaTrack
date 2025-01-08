@@ -1,0 +1,81 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif; /* Modern font */
+}
+body {
+    background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20240401/pngtree-blur-pharmacist-taking-medicine-from-shelf-in-pharmacy-image_15649362.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Align container to the right */
+    padding-right: 10%; /* Adjust padding to move container to the right */
+    position: relative; /* Required for absolute positioning of PharmaTrack */
+}
+.pharma-track {
+    position: absolute; /* Absolute positioning to place it at the top left */
+    top: 40px; /* Move down from the top */
+    left: 40px; /* Move right from the left */
+    font-family: 'Times New Roman', serif; /* Times New Roman font for the name */
+    font-size: 48px; /* Increased size of the text */
+    font-weight: 700; /* Font weight */
+    color: #fff; /* White color for visibility */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for better readability */
+}
+.container {
+    width: 30%; /* Adjust width for a smaller box */
+    background: rgba(0, 0, 0, 0.5); /* Transparent black background */
+    border-radius: 15px; /* Rounded corners */
+    padding: 40px; /* Padding inside the container */
+    margin-right: 0; /* No additional margin to the right */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5); /* Strong shadow for depth */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle, semi-transparent border */
+}
+h1 {
+    font-size: 36px; /* Larger font size for heading */
+    font-weight: 700; /* Heavier font weight for prominence */
+    margin-bottom: 30px; /* More spacing below the heading */
+    text-align: center;
+    color: #fff; /* White color for text */
+    text-transform: uppercase; /* Uppercase text for a bold statement */
+    letter-spacing: 2px; /* Increased letter spacing for elegance */
+    font-family: 'Augustine', serif; /* Augustine font for heading */
+}
+.btn {
+    display: block;
+    width: 100%;
+    height: 70px; /* Reduced height for buttons */
+    font-size: 20px; /* Slightly smaller font size */
+    font-weight: bold;
+    border-radius: 15px; /* More rounded corners */
+    margin-bottom: 20px;
+    text-align: center;
+    line-height: 70px; /* Center text vertically */
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Arial', sans-serif;
+    transition: all 0.3s ease;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); /* Stronger shadow for text */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Shadow for buttons */
+}
+.btn-admin {
+    background-color: #007bff; /* Blue color */
+    background-image: linear-gradient(145deg, #007bff, #0056b3); /* Gradient for depth */
+}
+.btn-dealer {
+    background-color: #28a745; /* Green color */
+    background-image: linear-gradient(145deg, #28a745, #196f3d); /* Gradient for depth */
+} 
+.btn-customer {
+    background-color: #ff0e0e; /* Red color */
+    background-image: linear-gradient(145deg, #e72020, #f21111); /* Gradient for depth */
+}
+.btn:hover {
+    opacity: 0.9; /* Slightly reduce opacity on hover */
+    transform: translateY(-5px); /* Lift the button slightly on hover */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
